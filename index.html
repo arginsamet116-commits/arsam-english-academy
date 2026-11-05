@@ -1,52 +1,303 @@
 
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARSAM English Academy | İngilizce Öğren</title>
+<title>ARSAM English Academy</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f8f6f0;color:#17243b}
-header{background:#101d35;color:white;padding:22px 7%;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:bold}
-.logo span{color:#d5ad63}
-nav a{color:white;text-decoration:none;margin-left:18px;font-size:14px}
-.hero{padding:80px 8%;background:#14243e;color:white}
-.hero small{color:#dfb96e;letter-spacing:2px}
-.hero h1{font-size:42px;max-width:650px;margin:20px 0}
-.hero p{color:#d3d9e2;line-height:1.8;max-width:550px}
-.btn{display:inline-block;margin-top:25px;background:#d5ad63;color:#14243e;padding:14px 25px;text-decoration:none;border-radius:5px;font-weight:bold}
-section{padding:55px 8%}
-.section-title{text-align:center;margin-bottom:30px}
-.section-title h2{font-size:29px;margin-bottom:10px}
-.section-title p{color:#687386}
-.levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px}
-.level{
+:root{
+--navy:#101d35;
+--navy2:#1b304f;
+--gold:#c9a45e;
+--cream:#f8f6f0;
+--white:#fff;
+--muted:#778195;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+font-family:Arial,sans-serif;
+background:var(--cream);
+color:var(--navy);
+line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1150px;margin:auto}
+
+/* HEADER */
+header{
+background:var(--navy);
+color:white;
+padding:17px 0;
+position:relative;
+z-index:20;
+}
+.navbar{
+display:flex;
+align-items:center;
+gap:20px;
+}
+.menu-button{
+background:var(--gold);
+color:var(--navy);
+border:0;
+border-radius:6px;
+padding:11px 16px;
+font-weight:bold;
+cursor:pointer;
+font-size:14px;
+}
+.logo{
+font-size:22px;
+font-weight:800;
+letter-spacing:1px;
+}
+.logo span{color:var(--gold)}
+.header-right{
+margin-left:auto;
+font-size:12px;
+color:#cbd4e2;
+}
+
+/* MENU PANEL */
+.menu-panel{
+display:none;
+position:absolute;
+top:100%;
+left:5%;
+width:min(90%,650px);
 background:white;
-padding:25px 12px;
-text-align:center;
+color:var(--navy);
 border:1px solid #e8e2d5;
-border-radius:8px;
-text-decoration:none;
-color:inherit;
+border-radius:0 0 12px 12px;
+padding:22px;
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+.menu-panel.open{display:block}
+.menu-title{
+font-size:19px;
+font-weight:bold;
+margin-bottom:15px;
+}
+.menu-category{
+border:1px solid #e8e2d5;
+border-radius:9px;
+margin-bottom:12px;
+overflow:hidden;
+}
+.category-button{
+width:100%;
+padding:17px;
+background:white;
+border:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+text-align:left;
+font-size:16px;
+font-weight:bold;
+color:var(--navy);
+cursor:pointer;
+}
+.category-button:hover{background:#f8f6f0}
+.category-button span:last-child{color:#a17d3d}
+.category-description{
+font-size:12px;
+color:var(--muted);
+font-weight:normal;
+display:block;
+margin-top:3px;
+}
+.submenu{
+display:none;
+padding:5px 15px 16px;
+background:#faf9f6;
+}
+.submenu.open{display:block}
+.level-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:9px;
+}
+.level-link{
+background:white;
+border:1px solid #e8e2d5;
+border-radius:7px;
+padding:12px 5px;
+text-align:center;
 display:block;
 }
-.level h3{color:#b38b45;font-size:25px;margin-bottom:8px}
-.level p{font-size:13px;color:#687386}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
-.skill{background:white;padding:22px;border-radius:8px;border:1px solid #e8e2d5}
-.skill h3{margin-bottom:10px}
-.skill p{color:#687386;font-size:14px;line-height:1.6}
-.method{background:#14243e;color:white;text-align:center}
-.method p{color:#d3d9e2;line-height:1.8;max-width:650px;margin:15px auto}
-footer{background:#101d35;color:#cbd1dc;text-align:center;padding:25px;font-size:13px}
-@media(max-width:600px){
-header{flex-direction:column;gap:16px}
-nav a{margin:0 7px;font-size:12px}
-.hero h1{font-size:34px}
+.level-link strong{
+display:block;
+font-size:21px;
+color:#a17d3d;
+}
+.level-link small{
+font-size:11px;
+color:var(--muted);
+}
+.level-link:hover{border-color:var(--gold)}
+.exam-list{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:9px;
+}
+.exam-item{
+background:white;
+border:1px solid #e8e2d5;
+border-radius:7px;
+padding:15px 5px;
+text-align:center;
+font-weight:bold;
+}
+.exam-item small{
+display:block;
+font-size:10px;
+color:var(--muted);
+font-weight:normal;
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(120deg,var(--navy),var(--navy2));
+color:white;
+padding:90px 0;
+}
+.hero-content{
+max-width:760px;
+}
+.eyebrow{
+color:var(--gold);
+font-size:12px;
+font-weight:bold;
+letter-spacing:3px;
+}
+.hero h1{
+font-size:48px;
+line-height:1.2;
+margin:20px 0;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+color:#d0d8e5;
+max-width:600px;
+line-height:1.9;
+}
+.hero-actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+.btn{
+display:inline-block;
+padding:13px 22px;
+border-radius:5px;
+font-size:14px;
+font-weight:bold;
+}
+.btn-gold{
+background:var(--gold);
+color:var(--navy);
+}
+.btn-outline{
+border:1px solid #aab5c6;
+color:white;
+}
+
+/* FEATURES */
+section{padding:70px 0}
+.section-heading{
+text-align:center;
+max-width:650px;
+margin:0 auto 35px;
+}
+.section-heading small{
+color:#a17d3d;
+font-weight:bold;
+letter-spacing:2px;
+}
+.section-heading h2{
+font-size:30px;
+margin:10px 0;
+}
+.section-heading p{color:var(--muted)}
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+.feature{
+background:white;
+border:1px solid #e9e4d9;
+border-radius:10px;
+padding:25px;
+}
+.feature-icon{
+width:42px;
+height:42px;
+display:grid;
+place-items:center;
+background:#f3eee3;
+color:#a17d3d;
+border-radius:8px;
+font-size:20px;
+margin-bottom:15px;
+}
+.feature h3{margin-bottom:8px}
+.feature p{
+font-size:14px;
+color:var(--muted);
+}
+
+/* METHOD */
+.method{
+background:var(--navy);
+color:white;
+}
+.method-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+.method-item{text-align:center;padding:20px 10px}
+.method-item strong{
+font-size:28px;
+color:var(--gold);
+}
+.method-item h3{margin:8px 0}
+.method-item p{
+font-size:13px;
+color:#bdc8d7;
+}
+
+/* FOOTER */
+footer{
+background:#0b1629;
+color:#cbd4e2;
+padding:28px 0;
+text-align:center;
+font-size:13px;
+}
+
+/* MOBILE */
+@media(max-width:650px){
+.navbar{gap:12px}
+.logo{font-size:17px}
+.menu-button{padding:10px;font-size:12px}
+.header-right{display:none}
+.hero{padding:65px 0}
+.hero h1{font-size:36px}
+.feature-grid{grid-template-columns:1fr 1fr}
+.method-grid{grid-template-columns:1fr 1fr}
+.menu-panel{left:3%;width:94%;padding:15px}
+}
+@media(max-width:400px){
+.feature-grid{grid-template-columns:1fr}
+.level-grid,.exam-list{gap:6px}
+.level-link{padding:10px 3px}
 }
 </style>
 </head>
@@ -54,95 +305,275 @@ nav a{margin:0 7px;font-size:12px}
 <body>
 
 <header>
-<div class="logo">ARSAM <span>ACADEMY</span></div>
-<nav>
-<a href="#anasayfa">Ana Sayfa</a>
-<a href="#seviyeler">Seviyeler</a>
-<a href="#alanlar">Dersler</a>
-</nav>
+<div class="container navbar">
+
+<button class="menu-button" id="menuButton">
+☰ Eğitim Menüsü
+</button>
+
+<a href="index.html" class="logo">
+ARSAM <span>ACADEMY</span>
+</a>
+
+<div class="header-right">
+İngilizce Öğrenme Platformu
+</div>
+
+</div>
+
+<div class="menu-panel" id="menuPanel">
+
+<div class="menu-title">Eğitim Programları</div>
+
+<div class="menu-category">
+
+<button class="category-button" id="generalButton">
+<div>
+Genel İngilizce
+<span class="category-description">
+A1 – C2 seviyelerinde İngilizce eğitimi
+</span>
+</div>
+<span>＋</span>
+</button>
+
+<div class="submenu" id="generalSubmenu">
+
+<div class="level-grid">
+
+<a href="a1-dersler.html" class="level-link">
+<strong>A1</strong><small>Başlangıç</small>
+</a>
+
+<a href="#yakinda" class="level-link">
+<strong>A2</strong><small>Temel</small>
+</a>
+
+<a href="#yakinda" class="level-link">
+<strong>B1</strong><small>Orta</small>
+</a>
+
+<a href="#yakinda" class="level-link">
+<strong>B2</strong><small>Orta üstü</small>
+</a>
+
+<a href="#yakinda" class="level-link">
+<strong>C1</strong><small>İleri</small>
+</a>
+
+<a href="#yakinda" class="level-link">
+<strong>C2</strong><small>Yetkinlik</small>
+</a>
+
+</div>
+</div>
+</div>
+
+<div class="menu-category">
+
+<button class="category-button" id="examButton">
+<div>
+Sınavlara Hazırlık
+<span class="category-description">
+Akademik İngilizce ve sınav programları
+</span>
+</div>
+<span>＋</span>
+</button>
+
+<div class="submenu" id="examSubmenu">
+
+<div class="exam-list">
+
+<div class="exam-item">
+YDS
+<small>Yakında</small>
+</div>
+
+<div class="exam-item">
+YDT
+<small>Yakında</small>
+</div>
+
+<div class="exam-item">
+YÖKDİL
+<small>Yakında</small>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
 </header>
 
 <main>
 
-<div class="hero" id="anasayfa">
-<small>ARSAM ENGLISH ACADEMY'YE HOŞ GELDİN</small>
-<h1>İngilizceni Geliştir, Geleceğini Şekillendir.</h1>
+<section class="hero">
+<div class="container hero-content">
+
+<span class="eyebrow">ARSAM ENGLISH ACADEMY</span>
+
+<h1>İngilizceni <span>geliştir,</span> geleceğini şekillendir.</h1>
+
 <p>
 İngilizceyi sıfırdan ileri seviyeye kadar sistemli,
 uygulamalı ve etkili bir şekilde öğren.
-Kendi seviyene uygun derslerle gelişimini adım adım takip et.
+Türkçe konu anlatımları ve seviyene uygun eğitim programlarıyla
+öğrenme yolculuğuna başla.
 </p>
-<a class="level" href="a1-dersler.html">
-</div>
 
-<section id="seviyeler">
-<div class="section-title">
-<h2>İngilizce Seviyeni Seç</h2>
-<p>Kendi seviyenden başlayarak İngilizceni geliştir.</p>
-</div>
-
-<div class="levels">
-<a class="level" href="a1.html">
-<h3>A1</h3>
-<p>Başlangıç</p>
+<div class="hero-actions">
+<button class="btn btn-gold" id="heroMenuButton">
+Eğitim Programlarını Keşfet
+</button>
+<a href="#alanlar" class="btn btn-outline">
+Akademiyi Tanı
 </a>
-<div class="level"><h3>A2</h3><p>Temel</p></div>
-<div class="level"><h3>B1</h3><p>Orta</p></div>
-<div class="level"><h3>B2</h3><p>Orta Üstü</p></div>
-<div class="level"><h3>C1</h3><p>İleri</p></div>
-<div class="level"><h3>C2</h3><p>Yetkinlik</p></div>
+</div>
+
 </div>
 </section>
 
 <section id="alanlar">
-<div class="section-title">
-<h2>Öğrenme Alanları</h2>
-<p>İngilizcenin tüm temel becerilerini geliştir.</p>
+<div class="container">
+
+<div class="section-heading">
+<small>ARSAM EĞİTİM SİSTEMİ</small>
+<h2>İngilizcenin Her Alanında Geliş</h2>
+<p>
+Genel İngilizce ve sınav hazırlık programlarıyla
+hedeflerine uygun bir öğrenme deneyimi.
+</p>
 </div>
 
-<div class="skills">
-<div class="skill">
+<div class="feature-grid">
+
+<div class="feature">
+<div class="feature-icon">A</div>
 <h3>Dil Bilgisi</h3>
-<p>İngilizce dil bilgisini Türkçe açıklamalar ve örneklerle öğren.</p>
+<p>İngilizce gramer konularını Türkçe açıklamalarla öğren.</p>
 </div>
-<div class="skill">
+
+<div class="feature">
+<div class="feature-icon">W</div>
 <h3>Kelime Bilgisi</h3>
-<p>Günlük hayatta ve akademik yaşamda kullanılan kelimeleri öğren.</p>
+<p>Günlük ve akademik İngilizce kelime dağarcığını geliştir.</p>
 </div>
-<div class="skill">
+
+<div class="feature">
+<div class="feature-icon">R</div>
 <h3>Okuma</h3>
-<p>Seviyene uygun İngilizce metinlerle okuduğunu anlama becerini geliştir.</p>
+<p>Seviyene uygun metinlerle okuduğunu anlama becerini artır.</p>
 </div>
-<div class="skill">
+
+<div class="feature">
+<div class="feature-icon">L</div>
 <h3>Dinleme</h3>
-<p>İngilizce konuşmaları daha iyi anlamak için dinleme çalışmaları yap.</p>
+<p>İngilizce konuşmaları daha iyi anlamayı öğren.</p>
 </div>
-<div class="skill">
+
+<div class="feature">
+<div class="feature-icon">W</div>
 <h3>Yazma</h3>
-<p>İngilizce cümleler, paragraflar ve metinler oluşturmayı öğren.</p>
+<p>İngilizce cümle ve metinler oluşturma becerini geliştir.</p>
 </div>
-<div class="skill">
+
+<div class="feature">
+<div class="feature-icon">S</div>
 <h3>Konuşma</h3>
-<p>İngilizce konuşma pratiği yaparak kendine güvenini artır.</p>
+<p>Pratik yaparak İngilizce konuşma güvenini artır.</p>
+</div>
+
 </div>
 </div>
 </section>
 
 <section class="method">
-<h2>Öğrenme Sistemimiz</h2>
-<p>GİRDİ → UYGULAMA → ÜRETİM → TEKRAR</p>
-<p>
-Önce yeni bilgileri öğren, ardından alıştırmalarla pekiştir.
-Öğrendiklerini kullan ve düzenli tekrarlarla kalıcı hâle getir.
-</p>
+<div class="container">
+
+<div class="section-heading">
+<small style="color:#d5b574">ÖĞRENME YAKLAŞIMIMIZ</small>
+<h2 style="color:white">Dört Adımda Etkili Öğrenme</h2>
+<p style="color:#bdc8d7">Öğren, uygula, kullan ve tekrar et.</p>
+</div>
+
+<div class="method-grid">
+
+<div class="method-item">
+<strong>01</strong>
+<h3>Girdi</h3>
+<p>Yeni bilgilerle tanış.</p>
+</div>
+
+<div class="method-item">
+<strong>02</strong>
+<h3>Uygulama</h3>
+<p>Alıştırmalarla pekiştir.</p>
+</div>
+
+<div class="method-item">
+<strong>03</strong>
+<h3>Üretim</h3>
+<p>İngilizceyi aktif kullan.</p>
+</div>
+
+<div class="method-item">
+<strong>04</strong>
+<h3>Tekrar</h3>
+<p>Bilgilerini kalıcı hâle getir.</p>
+</div>
+
+</div>
+</div>
 </section>
 
 </main>
 
 <footer>
-<p>ARSAM English Academy © 2026</p>
-<p>Bugün Öğren, Yarın İletişim Kur.</p>
+<div class="container">
+<div class="logo">ARSAM <span>ACADEMY</span></div>
+<p>İngilizce öğrenmenin sistemli yolu.</p>
+<p>© 2026 ARSAM English Academy</p>
+</div>
 </footer>
+
+<script>
+const menuButton=document.getElementById("menuButton");
+const menuPanel=document.getElementById("menuPanel");
+const generalButton=document.getElementById("generalButton");
+const examButton=document.getElementById("examButton");
+const generalSubmenu=document.getElementById("generalSubmenu");
+const examSubmenu=document.getElementById("examSubmenu");
+const heroMenuButton=document.getElementById("heroMenuButton");
+
+function toggleMenu(){
+menuPanel.classList.toggle("open");
+}
+
+menuButton.addEventListener("click",toggleMenu);
+heroMenuButton.addEventListener("click",()=>{
+menuPanel.classList.add("open");
+});
+
+generalButton.addEventListener("click",()=>{
+generalSubmenu.classList.toggle("open");
+});
+
+examButton.addEventListener("click",()=>{
+examSubmenu.classList.toggle("open");
+});
+
+document.addEventListener("click",function(event){
+if(!menuPanel.contains(event.target)&&
+!menuButton.contains(event.target)&&
+!heroMenuButton.contains(event.target)){
+menuPanel.classList.remove("open");
+}
+});
+</script>
 
 </body>
 </html>
+
+
