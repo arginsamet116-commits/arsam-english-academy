@@ -3,23 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A1 İngilizce Programı | ARSAM Academy</title>
+<title>A1 Eğitim Paneli | ARSAM English Academy</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f8f6f0;color:#17243b;line-height:1.6}
-header{background:#101d35;color:white;padding:20px 7%}
-header a{color:#dfb96e;text-decoration:none}
+*{box-sizing:border-box}
+body{margin:0;background:#f8f6f0;color:#17243b;font-family:Arial,sans-serif;line-height:1.6}
+header{background:#101d35;padding:14px 20px}
+header a{color:#dfc17e;text-decoration:none;font-size:13px}
 .container{max-width:850px;margin:35px auto;padding:0 18px}
-.intro{background:#14243e;color:white;padding:30px;border-radius:12px;margin-bottom:25px}
-.intro h1{margin:10px 0}
-.intro p{color:#d3d9e2}
-.progress{background:#d5ad63;height:7px;border-radius:10px;margin-top:18px;width:10%}
-.lesson{background:white;border:1px solid #e8e2d5;border-radius:9px;padding:18px;margin:12px 0;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.lesson h3{font-size:16px}
-.lesson p{font-size:13px;color:#687386}
-.lesson a{background:#14243e;color:white;padding:9px 14px;text-decoration:none;border-radius:5px;font-size:13px;white-space:nowrap}
-.soon{color:#a47d36;font-size:12px;font-weight:bold}
-footer{text-align:center;background:#101d35;color:white;padding:22px;margin-top:40px}
+.intro{background:#14243e;color:white;padding:28px 22px;border-radius:12px;margin-bottom:28px}
+.intro small{color:#dfc17e}
+.intro h1{margin:8px 0;font-size:26px}
+.intro p{color:#d0d8e2;font-size:14px}
+h2{font-size:20px;margin-bottom:15px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:white;border:1px solid #e8e2d8;border-radius:10px;padding:20px;text-decoration:none;color:#17243b;display:block}
+.card h3{margin:8px 0;font-size:18px}
+.card p{font-size:13px;color:#687386;margin:0}
+.card .icon{font-size:25px}
+.card .status{display:inline-block;margin-top:14px;font-size:12px;color:#92743a}
+.card.active{border:1px solid #d6bd7e}
+.card.active .status{background:#f5edda;padding:5px 10px;border-radius:5px}
+.card.disabled{opacity:.75}
+footer{text-align:center;background:#101d35;color:white;padding:20px;margin-top:45px;font-size:12px}
+@media(max-width:500px){.grid{grid-template-columns:1fr}.container{margin:24px auto}}
 </style>
 </head>
 <body>
@@ -31,65 +37,44 @@ footer{text-align:center;background:#101d35;color:white;padding:22px;margin-top:
 <div class="container">
 
 <div class="intro">
-<p>A1 • BAŞLANGIÇ SEVİYESİ</p>
+<small>A1 • BAŞLANGIÇ SEVİYESİ</small>
 <h1>İngilizceye İlk Adım</h1>
-<p>Temel İngilizce bilgilerini Türkçe anlatımlar, örnekler ve uygulamalarla öğren.</p>
-<div class="progress"></div>
-<small>10 derslik başlangıç programı</small>
+<p>İngilizceni dört temel beceriyle geliştir. Kendi hızında öğren, pratik yap ve ilerle.</p>
 </div>
 
-<h2>A1 Ders Programı</h2>
+<h2>A1 Eğitim Bölümleri</h2>
 
-<div class="lesson">
-<div><h3>01. Am / Is / Are</h3><p>İngilizcede olmak fiili</p></div>
-<a href="a1.html">Derse Git</a>
+<div class="grid">
+
+<a class="card active" href="a1-grammar.html">
+<div class="icon">📘</div>
+<h3>Grammar</h3>
+<p>İngilizce dil bilgisi ve gramer konuları.</p>
+<span class="status">Dersleri Gör →</span>
+</a>
+
+<div class="card disabled">
+<div class="icon">📖</div>
+<h3>Reading</h3>
+<p>Seviyene uygun metinler ve okuduğunu anlama çalışmaları.</p>
+<span class="status">Yakında</span>
 </div>
 
-<div class="lesson">
-<div><h3>02. Subject Pronouns</h3><p>Şahıs zamirleri</p></div>
-<span class="soon">Yakında</span>
+<div class="card disabled">
+<div class="icon">🎧</div>
+<h3>Listening</h3>
+<p>Dinleme kayıtları, konuşmalar ve anlama etkinlikleri.</p>
+<span class="status">Yakında</span>
 </div>
 
-<div class="lesson">
-<div><h3>03. A / An / The</h3><p>İngilizcede artikeller</p></div>
-<span class="soon">Yakında</span>
+<div class="card disabled">
+<div class="icon">✍️</div>
+<h3>Writing</h3>
+<p>İngilizce yazma görevleri ve uygulamalı çalışmalar.</p>
+<span class="status">Yakında</span>
 </div>
 
-<div class="lesson">
-<div><h3>04. Plural Nouns</h3><p>Çoğul isimler</p></div>
-<span class="soon">Yakında</span>
 </div>
-
-<div class="lesson">
-<div><h3>05. Present Simple</h3><p>Geniş zaman</p></div>
-<span class="soon">Yakında</span>
-</div>
-
-<div class="lesson">
-<div><h3>06. Have Got / Has Got</h3><p>Sahiplik bildirme</p></div>
-<span class="soon">Yakında</span>
-</div>
-
-<div class="lesson">
-<div><h3>07. There Is / There Are</h3><p>Var ve yok ifadeleri</p></div>
-<span class="soon">Yakında</span>
-</div>
-
-<div class="lesson">
-<div><h3>08. Can / Can't</h3><p>Yetenek ve izin bildirme</p></div>
-<span class="soon">Yakında</span>
-</div>
-
-<div class="lesson">
-<div><h3>09. Prepositions</h3><p>Yer ve zaman edatları</p></div>
-<span class="soon">Yakında</span>
-</div>
-
-<div class="lesson">
-<div><h3>10. A1 Genel Tekrar</h3><p>Genel değerlendirme testi</p></div>
-<span class="soon">Yakında</span>
-</div>
-
 </div>
 
 <footer>
