@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A1 İngilizce Dersleri | ARSAM Academy</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f7f5ef;color:#17243b;line-height:1.7}
+header{background:#101d35;color:white;padding:20px 7%}
+header a{color:#e2bd75;text-decoration:none}
+.container{max-width:850px;margin:35px auto;padding:0 18px}
+h1{font-size:30px;margin:15px 0}
+h2{margin:20px 0 12px;color:#17243b}
+.card{background:white;padding:22px;margin:18px 0;border-radius:10px;border:1px solid #e8e2d5}
+.tag{color:#a47d36;font-weight:bold;font-size:13px}
+.example{background:#f3f0e8;padding:12px;border-radius:6px;margin:10px 0}
+input{padding:11px;width:100%;margin:8px 0;border:1px solid #ccc;border-radius:5px}
+button{background:#14243e;color:white;border:0;padding:12px 20px;border-radius:5px;cursor:pointer;margin-top:10px}
+button:hover{background:#263d62}
+.result{font-weight:bold;margin-top:12px}
+footer{text-align:center;padding:25px;background:#101d35;color:white;margin-top:40px}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html">← Ana Sayfaya Dön</a>
+</header>
+
+<div class="container">
+
+<span class="tag">A1 • BAŞLANGIÇ SEVİYESİ • DERS 1</span>
+<h1>Verb To Be: Am / Is / Are</h1>
+<p>Bu derste İngilizcede "olmak" fiilini ve temel cümle yapısını öğreneceksin.</p>
+
+<div class="card">
+<h2>1. Konu Anlatımı</h2>
+<p>İngilizcede "am, is, are" kelimeleri Türkçedeki "olmak" fiilinin farklı öznelerle kullanılan biçimleridir.</p>
+
+<div class="example">
+<strong>I am</strong> – Ben ...im<br>
+<strong>You are</strong> – Sen ...sin<br>
+<strong>He is</strong> – O (erkek) ...<br>
+<strong>She is</strong> – O (kadın) ...<br>
+<strong>It is</strong> – O (cansız/hayvan) ...<br>
+<strong>We are</strong> – Biz ...iz<br>
+<strong>They are</strong> – Onlar ...
+</div>
+
+<h2>2. Cümle Yapısı</h2>
+<p><strong>Özne + Am / Is / Are + Tamamlayıcı</strong></p>
+
+<div class="example">
+I am a student. – Ben bir öğrenciyim.<br>
+She is happy. – O mutlu.<br>
+They are friends. – Onlar arkadaş.
+</div>
+</div>
+
+<div class="card">
+<h2>3. Olumsuz Cümleler</h2>
+<p>Olumsuz cümle kurmak için am, is veya are kelimesinden sonra <strong>not</strong> eklenir.</p>
+
+<div class="example">
+I am not tired. – Yorgun değilim.<br>
+He is not a teacher. – O öğretmen değil.<br>
+We are not ready. – Hazır değiliz.
+</div>
+</div>
+
+<div class="card">
+<h2>4. Soru Cümleleri</h2>
+<p>Am, is veya are cümlenin başına getirilir.</p>
+
+<div class="example">
+Are you a student? – Öğrenci misin?<br>
+Is she happy? – O mutlu mu?<br>
+Are they friends? – Onlar arkadaş mı?
+</div>
+</div>
+
+<div class="card">
+<h2>5. Alıştırma</h2>
+<p>Boşlukları uygun kelimeyle doldur: am, is veya are.</p>
+
+<form id="quiz">
+
+<p>1. I _____ a student.</p>
+<input name="q1" placeholder="Cevabını yaz">
+
+<p>2. She _____ happy.</p>
+<input name="q2" placeholder="Cevabını yaz">
+
+<p>3. They _____ friends.</p>
+<input name="q3" placeholder="Cevabını yaz">
+
+<p>4. We _____ ready.</p>
+<input name="q4" placeholder="Cevabını yaz">
+
+<p>5. He _____ a teacher.</p>
+<input name="q5" placeholder="Cevabını yaz">
+
+<button type="submit">Cevapları Kontrol Et</button>
+</form>
+
+<div class="result" id="result"></div>
+</div>
+
+<div class="card">
+<h2>6. Öğrendiklerini Tekrar Et</h2>
+<p>Bu dersten sonra aşağıdakileri yapabiliyor olmalısın:</p>
+<ul>
+<li>Am, is ve are arasındaki farkı bilmek.</li>
+<li>Olumlu cümle kurmak.</li>
+<li>Olumsuz cümle kurmak.</li>
+<li>Basit soru cümleleri oluşturmak.</li>
+</ul>
+</div>
+
+</div>
+
+<footer>
+ARSAM English Academy © 2026
+</footer>
+
+<script>
+document.getElementById("quiz").addEventListener("submit",function(e){
+e.preventDefault();
+
+const answers=["am","is","are","are","is"];
+let score=0;
+
+answers.forEach((answer,index)=>{
+const userAnswer=this.elements["q"+(index+1)].value.trim().toLowerCase();
+if(userAnswer===answer) score++;
+});
+
+document.getElementById("result").textContent=
+"Sonucun: "+score+"/5 doğru. "+
+(score===5?"Harika! Dersi başarıyla tamamladın.":"Tekrar çalış ve yeniden dene.");
+});
+</script>
+
+</body>
+</html>
